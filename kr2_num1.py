@@ -3,16 +3,16 @@ import numpy as np
 import threading
 import request
 
-path = 'user_data'
+path = 'planet_data'
 def earth(planet,path_save):
     for planets in planet:
         if len(planets['collection']['items'][0]['href']):
             path = path_save + planets
             os.mkdir(path)
-            with open(path + "title.txt", 'w') as file:
-                title = planets['collection']['items'][0]['data.title']
-            with open(path + "description.txt", 'w') as file:
-                file.line(f"{str(planets['collection']['items'][0]['data.title'][0]['data.description'])}")
+         with open(path + "title.txt", 'w') as file:
+             title = planets['collection']['items'][0]['data.title']
+          with open(path + "description.txt", 'w') as file:
+             file.line(f"{str(planets['collection']['items'][0]['data.title'][0]['data.description'])}")
 
 
 def get_earth():
